@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bootpay-backend-nodejs": "^1.1.1"
+    }
+}
