@@ -1,6 +1,7 @@
+import { Bootpay } from '@bootpay/backend-js'
 // 1. 토큰 발급
 async function getAccessToken() { 
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -15,7 +16,7 @@ async function getAccessToken() {
 
 // 2. 결제 검증 
 async function verify() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -35,7 +36,7 @@ async function verify() {
 
 // 3. 결제 취소 (전액 취소 / 부분 취소)
 async function cancel() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -60,7 +61,7 @@ async function cancel() {
 
 // 4. 빌링키 발급
 async function getBillingKey() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -92,7 +93,7 @@ async function getBillingKey() {
 
 // 4-1. 발급된 빌링키로 결제 승인 요청
 async function subscribeBilling() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -118,7 +119,7 @@ async function subscribeBilling() {
 
 // 4-2. 발급된 빌링키로 결제 예약 요청
 async function subscribeBillingReserve() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -150,7 +151,7 @@ async function subscribeBillingReserve() {
 
 // 4-2-1. 발급된 빌링키로 결제 예약 - 취소 요청
 async function subscribeBillingReserveCancel() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -170,7 +171,7 @@ async function subscribeBillingReserveCancel() {
 
 // 4-3. 빌링키 삭제
 async function deleteBillingKey() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -190,7 +191,7 @@ async function deleteBillingKey() {
 
 // 5. (부트페이 단독 - 간편결제창, 생체인증 기반의 사용자를 위한) 사용자 토큰 발급
 async function getUserToken() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -214,7 +215,7 @@ async function getUserToken() {
 
 // 6. 결제링크 생성
 async function requestPayment() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -243,7 +244,7 @@ async function requestPayment() {
 
 // 7. 서버 승인 요청
 async function submit() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -261,7 +262,7 @@ async function submit() {
 }
 // 8. 본인 인증 결과 검증
 async function certificate() {
-    const Bootpay = require('bootpay-backend-nodejs').Bootpay
+    
     Bootpay.setConfig(
         '5b8f6a4d396fa665fdc2b5ea',
         'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
@@ -278,19 +279,50 @@ async function certificate() {
     }
 }
 
+
+async function requestSubscribeAutomaticTransferBillingKey() {
+    // const Bootpay = require('../dist/bootpay.js').Bootpay
+    Bootpay.setConfiguration({
+        application_id: '5b8f6a4d396fa665fdc2b5ea',
+        private_key: 'rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw='
+    })
+    try {
+        await Bootpay.getAccessToken()
+        const response = await Bootpay.requestSubscribeAutomaticTransferBillingKey({
+            pg: '나이스페이',
+            order_name: '테스트결제',
+            subscription_id: (new Date()).getTime(),
+            price: 1000,
+            username: '홍길동',
+            bank_name: '국민',
+            bank_account: '67561234123492472',
+            identity_no: '901014',
+            cash_receipt_identity_no: '01012341234',
+            phone: '01012341234',
+            user: {
+                username: '홍길동',
+                phone: '01012345678'
+            }
+        })
+        console.log(response)
+    } catch (e) {
+        console.log(e)
+    }
+}
 async function goTest() {
-    await getAccessToken();
-    await verify();
-    await cancel();
-    await getBillingKey();
-    await subscribeBilling();
-    await subscribeBillingReserve();
-    await subscribeBillingReserveCancel();
-    await deleteBillingKey();
-    await getUserToken();
-    await requestPayment();
-    await submit();
-    await certificate();
+    // await getAccessToken();
+    // await verify();
+    // await cancel();
+    // await getBillingKey();
+    // await subscribeBilling();
+    // await subscribeBillingReserve();
+    // await subscribeBillingReserveCancel();
+    // await deleteBillingKey();
+    // await getUserToken();
+    // await requestPayment();
+    // await submit();
+    // await certificate();
+    await requestSubscribeAutomaticTransferBillingKey();
 }
 
 goTest();

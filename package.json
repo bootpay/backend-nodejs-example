@@ -2,7 +2,6 @@
   "type": "module",
   "dependencies": {
     "axios": "^0.27.2",
-    "bootpay-backend-nodejs": "^1.1.2",
-    "@bootpay/backend-js": "^2.0.2"
+    "@bootpay/backend-js": "^2.3.0"
   }
 }
